@@ -11,6 +11,8 @@ class App extends Component {
         <h1>Hello World</h1>
         <p>check git update</p>
         <p>check git update</p>
+        <h1>Hello World</h1>
+        <p>check git update</p>
       </div>
     );
   }
