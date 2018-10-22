@@ -7,6 +7,7 @@ class App extends Component {
       <div className="App">
         <h1>Hello World</h1>
         <p>check git update</p>
+        <p>check git update</p>
       </div>
     );
   }
