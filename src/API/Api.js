@@ -10,4 +10,15 @@ class Square  {
 		}
 		return Object.keys(keys).map(key => `${key}=${keys[key]}`).join("&");
 	}
+	static lists() {
+		return{
+			Accept: "application/Json"
+		};
+	}
+	static urlBuild(urlPrams) {
+		if(!urlPrams) {
+			return ""
+		}
+		return Object.keys(urlPrams).map(key => `${key}=${urlPrams[key]}`).join("&");
+	}
 }
