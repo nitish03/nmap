@@ -32,3 +32,15 @@ class Square  {
 			.then(res => res.json());
 	}
 }
+
+export default class SquareAPI {
+	static search(urlPrams) {
+		return Square.startFetch("/venues/search", "GET", urlPrams);
+	}
+	static venueDetails(VENUE_ID) {
+		return Square.startFetch(`/venues/${VENUE_ID}`, "GET");
+	}
+	static venuePhotos(VENUE_ID) {
+		return Square.startFetch(`/venues/${VENUE_ID}/photos`, "GET");
+	}
+}
