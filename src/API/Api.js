@@ -11,14 +11,24 @@ class Square  {
 		return Object.keys(keys).map(key => `${key}=${keys[key]}`).join("&");
 	}
 	static lists() {
-		return{
+		return {
 			Accept: "application/Json"
 		};
 	}
 	static urlBuild(urlPrams) {
 		if(!urlPrams) {
-			return ""
+			return "";
 		}
 		return Object.keys(urlPrams).map(key => `${key}=${urlPrams[key]}`).join("&");
+	}
+	static startFetch(endPoint, method, urlPrams) {
+		let requestData = {
+			method,
+			headers: Square.lists()
+		}
+		return fetch(
+			`${Square.rootURL()}${endPoint}?${Square.auth()}&${Square.urlBuild(urlPrams)}`,
+			requestData)
+			.then(res => res.json());
 	}
 }
