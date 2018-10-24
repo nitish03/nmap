@@ -36,10 +36,15 @@ class App extends Component {
     });
   }
 
+  markedInfoWindow = (info) => {
+    info.isOpen = true;
+    this.setState({markers: Object.assign(this.state.markers, info),})
+  }
+
   render() {
     return (
       <div className="App">
-        <Map {...this.state}/>
+        <Map {...this.state} markedInfoWindow = {this.markedInfoWindow}/>
       </div>
     );
   }
