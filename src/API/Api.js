@@ -6,7 +6,7 @@ class Square  {
 		const keys = {
 			client_id: "1MOFPSZVAUKPPKPUEQUNZJVBZRVKY4DO020P0LRVO2PBRVQ3",
 			client_secret: "VQVZJ1JXPSAUUDKPBVDCZ2JYPRMNHWX2GFADXTZGIMDXRCE1",
-			v: "20181022"
+			v: "20181024"
 		}
 		return Object.keys(keys).map(key => `${key}=${keys[key]}`).join("&");
 	}

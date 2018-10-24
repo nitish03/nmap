@@ -4,16 +4,15 @@ import Map from './components/Map';
 import SquareAPI from './API/Api';
 
 class App extends Component {
-  
+
   constructor(props) {
-    super(props) {
+    super(props);
       this.state = {
         venues: [],
         markers: [],
         center: [],
         zoom: 11
       }
-    }
   }
 
   componentDidMount() {
@@ -21,13 +20,26 @@ class App extends Component {
       near: "Jacksonville,FL",
       query: "pizza",
       limit: 15
-    }).then(results => console.log(results));
+    }).then(results => {
+      const { venues } = results.response;
+      const { center } = results.response.geocode.feature.geometry;
+      const markers = venues.map(venue => {
+        return {
+          lat: venue.location.lat,
+          lng: venue.location.lng,
+          isOpen: false,
+          isVisible: true
+        };
+      });
+      this.setState({venues, markers, center});
+      console.log(results)
+    });
   }
 
   render() {
     return (
       <div className="App">
-        <Map />
+        <Map {...this.state}/>
       </div>
     );
   }
