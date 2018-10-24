@@ -37,8 +37,17 @@ class App extends Component {
   }
 
   markedInfoWindow = (info) => {
+    this.cancelInfo();
     info.isOpen = true;
-    this.setState({markers: Object.assign(this.state.markers, info),})
+    this.setState({markers: Object.assign(this.state.markers, info)})
+  }
+
+  cancelInfo = () => {
+    const markers = this.state.markers.map(marker => {
+      marker.isOpen = false;
+      return marker;
+    });
+    this.setState({markers: Object.assign(this.state.markers, markers)})
   }
 
   render() {
