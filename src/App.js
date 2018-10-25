@@ -27,6 +27,7 @@ class App extends Component {
         return {
           lat: venue.location.lat,
           lng: venue.location.lng,
+          id: venue.id,
           isOpen: false,
           isVisible: true
         };
@@ -40,6 +41,8 @@ class App extends Component {
     this.cancelInfo();
     info.isOpen = true;
     this.setState({markers: Object.assign(this.state.markers, info)})
+    SquareAPI.venueDetails(info.id)
+    .then(res => console.log(res))
   }
 
   cancelInfo = () => {
