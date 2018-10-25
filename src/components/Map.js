@@ -35,7 +35,7 @@ class Map extends Component {
 			 {...this.props}
 			  googleMapURL="https://maps.googleapis.com/maps/api/js?v=3.exp&key=AIzaSyBB8RTKIWJ9hnl7f0bpQmY7ZCRRRSgx8nA"
 			  loadingElement={<div style={{ height: `100%` }} />}
-			  containerElement={<div style={{ height: `900px` }} />}
+			  containerElement={<div style={{ width: `75vw`, height: `100vh` }} />}
 			  mapElement={<div style={{ height: `100%` }} />}
 			/>
 		);
