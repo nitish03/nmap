@@ -41,8 +41,12 @@ class App extends Component {
     this.cancelInfo();
     info.isOpen = true;
     this.setState({markers: Object.assign(this.state.markers, info)})
+    const place = this.state.venues.find(place => place.id === info.id);
     SquareAPI.venueDetails(info.id)
-    .then(res => console.log(res))
+    .then(res => {
+      const newPlace = Object.assign(place, res.response.venue)
+      this.setState({venues: Object.assign(this.state.venues, newPlace)})
+     console.log(newPlace)})
   }
 
   cancelInfo = () => {
