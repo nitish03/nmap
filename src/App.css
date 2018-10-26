@@ -1,5 +1,11 @@
 .App {
   text-align: center;
+  display: flex;
+  flex-flow: row wrap;
+}
+
+.sidebar {
+  width: 20%;
 }
 
 .App-logo {
