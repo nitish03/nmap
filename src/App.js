@@ -59,6 +59,8 @@ class App extends Component {
   }
 
   handlePlaceList = (place) => {
+    const info = this.state.markers.find(info => info.id === place.id)
+    this.markedInfoWindow(info)
     console.log(place);
   }
 
