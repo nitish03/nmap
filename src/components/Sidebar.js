@@ -10,6 +10,10 @@ class Sidebar extends Component {
 		}
 	}
 
+	searchBar = event => {
+		this.setState({query: event.target.value})
+	}
+
 	render() {
 		return (
 			<div className="sidebar">
