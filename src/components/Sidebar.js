@@ -6,7 +6,7 @@ class Sidebar extends Component {
 		return (
 			<div className="sidebar">
 			<input type={"search"} id={"find"} placeholder={"Find Your Place"} />
-			<Placelist {...this.props}/>
+			<Placelist {...this.props} handlePlaceList= {this.props.handlePlaceList}/>
 			</div>
 		);
 	}

@@ -58,10 +58,14 @@ class App extends Component {
     this.setState({markers: Object.assign(this.state.markers, markers)})
   }
 
+  handlePlaceList = (place) => {
+    console.log(place);
+  }
+
   render() {
     return (
       <div className="App">
-      <Sidebar {...this.state} />
+      <Sidebar {...this.state} handlePlaceList ={this.handlePlaceList}/>
         <Map {...this.state} markedInfoWindow = {this.markedInfoWindow}/>
       </div>
     );
