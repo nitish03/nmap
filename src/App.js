@@ -12,7 +12,10 @@ class App extends Component {
         venues: [],
         markers: [],
         center: [],
-        zoom: 11
+        zoom: 11,
+        searchState: set => {
+          this.setState(set);
+        }
       }
   }
 
