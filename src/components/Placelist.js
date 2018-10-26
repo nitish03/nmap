@@ -5,7 +5,9 @@ class Placelist extends Component {
 	render() {
 		return (
 			<ol className="placelist">
-			<Listcontainer />
+			{this.props.venues && this.props.venues.map((place, id) => (
+				<Listcontainer {...place} key={id}/>
+			))}
 			</ol>
 		);
 	}
