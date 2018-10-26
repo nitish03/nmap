@@ -4,7 +4,7 @@ class Listconatiner extends Component {
 	render() {
 		return (
 			<li className="list">
-			Hi Gmap!
+			{this.props.name}
 			</li>
 		);
 	}
