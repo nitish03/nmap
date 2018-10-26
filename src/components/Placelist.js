@@ -1,10 +1,12 @@
 import React, { Component } from 'react';
+import Listcontainer from './Listcontainer';
 
 class Placelist extends Component {
 	render() {
 		return (
-			<div>
-			</div>
+			<ol className="placelist">
+			<Listcontainer />
+			</ol>
 		);
 	}
 }

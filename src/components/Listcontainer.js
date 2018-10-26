@@ -3,8 +3,9 @@ import React, { Component } from 'react';
 class Listconatiner extends Component {
 	render() {
 		return (
-			<div>
-			</div>
+			<li className="list">
+			Hi Gmap!
+			</li>
 		);
 	}
 }
