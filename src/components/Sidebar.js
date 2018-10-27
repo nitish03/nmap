@@ -6,8 +6,20 @@ class Sidebar extends Component {
 	constructor(props) {
 		super(props);
 		this.state = {
-			query: ''
+			query: '',
 		}
+	}
+
+	handleFilterPlaces = () => {
+			if(this.state.query.trim() !== "") {
+				const venues = this.props.venues.filter(venue =>
+					venue.name.toLowerCase()
+				.includes(this.state.query.toLowerCase())
+			);
+			// console.log(venues);
+				return venues;
+			}
+			return this.props.venues;
 	}
 
 	handleSearchBar = event => {
@@ -31,7 +43,11 @@ class Sidebar extends Component {
 			<input type={"search"} id={"find"}
 			placeholder={"Find Your Place"}
 			onChange={this.handleSearchBar}/>
-			<Placelist {...this.props} handlePlaceList= {this.props.handlePlaceList}/>
+
+			<Placelist {...this.props}
+			venues={this.handleFilterPlaces()}
+			handlePlaceList= {this.props.handlePlaceList}
+			/>
 			</div>
 		);
 	}
