@@ -39,7 +39,10 @@ class App extends Component {
       });
       this.setState({venues, markers, center});
       console.log(results)
-    });
+    }).catch(error => {
+      alert('Something went wrong or API failed. Please try again')
+      console.log(error);
+    })
   }
 
   markedInfoWindow = (info) => {
@@ -71,8 +74,10 @@ class App extends Component {
   render() {
     return (
       <div className="App">
-      <Sidebar {...this.state} handlePlaceList ={this.handlePlaceList}/>
-        <Map {...this.state} markedInfoWindow = {this.markedInfoWindow}/>
+        <ErrorBoundary>
+          <Sidebar {...this.state} handlePlaceList ={this.handlePlaceList}/>
+          <Map {...this.state} markedInfoWindow = {this.markedInfoWindow}/>
+        </ErrorBoundary>
       </div>
     );
   }
