@@ -3,6 +3,7 @@ import './App.css';
 import Map from './components/Map';
 import SquareAPI from './API/Api';
 import Sidebar from './components/Sidebar';
+import ErrorBoundary from './components/ErrorBoundary';
 
 class App extends Component {
 
