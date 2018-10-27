@@ -5,7 +5,7 @@ const MyMap = withScriptjs(withGoogleMap((props) =>
 	<GoogleMap
 		defaultZoom={8} zoom = {props.zoom}
 		defaultCenter={{ lat: 30.66775, lng: -81.461511 }}
-		center = {props.center}
+		center = {{lat: parseFloat(props.center.lat), lng: parseFloat(props.center.lng)}}
 	>
 		{props.markers &&
 			props.markers.filter(marker => marker.isVisible)
