@@ -10,21 +10,24 @@ class App extends Component {
   constructor(props) {
     super(props);
       this.state = {
+        /*state method for venues, markers, center and zoom*/
         venues: [],
         markers: [],
         center: [],
         zoom: 11,
+        /*set state method to handle search bar*/
         searchState: set => {
           this.setState(set);
         }
       }
   }
 
+/*get the information from FourSquare API*/
   componentDidMount() {
     SquareAPI.search({
       near: "Jacksonville,FL",
-      query: "pizza",
-      limit: 15
+      query: "Restaurant",
+      limit: 20
     }).then(results => {
       const { venues } = results.response;
       const { center } = results.response.geocode.feature.geometry;
@@ -40,11 +43,12 @@ class App extends Component {
       this.setState({venues, markers, center});
       console.log(results)
     }).catch(error => {
-      alert('Something went wrong or API failed. Please try again')
+      alert('Something went wrong or API failed. Please try again') /*fetch ErrorBoundary if object of the request failed*/
       console.log(error);
     })
   }
 
+/*show info windows and informations and returns on default state*/
   markedInfoWindow = (info) => {
     this.cancelInfo();
     info.isOpen = true;
@@ -57,6 +61,7 @@ class App extends Component {
      console.log(newPlace)})
   }
 
+/*return infow windows in default state*/
   cancelInfo = () => {
     const markers = this.state.markers.map(marker => {
       marker.isOpen = false;
@@ -65,6 +70,7 @@ class App extends Component {
     this.setState({markers: Object.assign(this.state.markers, markers)})
   }
 
+/*to see info window and informations after clicking on place list*/
   handlePlaceList = (place) => {
     const info = this.state.markers.find(info => info.id === place.id)
     this.markedInfoWindow(info)

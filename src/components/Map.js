@@ -20,7 +20,7 @@ const MyMap = withScriptjs(withGoogleMap((props) =>
 		 {marker.isOpen && placeInfo.bestPhoto &&(
 			 <InfoWindow>
 			 <React.Fragment>
-			 <img src= {`${placeInfo.bestPhoto.prefix}250x250${placeInfo.bestPhoto.suffix}`} alt={`Place: ${placeInfo.name}`}/>
+			 <img src= {`${placeInfo.bestPhoto.prefix}200x200${placeInfo.bestPhoto.suffix}`} alt={`Place: ${placeInfo.name}`}/>
 		    <h3>{placeInfo.name}</h3>
 				<p>{placeInfo.location['address']}</p>
 				</React.Fragment>
