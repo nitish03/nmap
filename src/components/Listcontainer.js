@@ -5,6 +5,7 @@ class Listconatiner extends Component {
 		return (
 			<li className="list"
 			onClick= {() => this.props.handlePlaceList(this.props)}
+			tabIndex = "0" role = "Link"
 			>
 			{this.props.name}
 			</li>

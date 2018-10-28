@@ -45,7 +45,7 @@ class Sidebar extends Component {
 			<div className="sidebar">
 			<input type={"search"} id={"find"}
 			placeholder={"Find Your Place"}
-			onChange={this.handleSearchBar}/>
+			onChange={this.handleSearchBar} aria-label={"Search Places"}/>
 
 			<Placelist {...this.props}
 			venues={this.handleFilterPlaces()}
