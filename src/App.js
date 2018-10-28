@@ -90,3 +90,14 @@ class App extends Component {
 }
 
 export default App;
+
+/*
+Resources
+Udacity lessons and for more help:
+* https://reacttraining.com/react-router/web/guides/quick-start
+* https://reactjs.org/
+* FourSquare https://foursquare.com/developers/login?continue=%2Fdevelopers%2Fapps
+* Project Walkthrough https://www.youtube.com/playlist?list=PL4rQq4MQP1crXuPtruu_eijgOUUXhcUCP
+* animation https://developers.google.com/maps/documentation/javascript/examples/marker-animations
+* Error Boundary https://reactjs.org/docs/error-boundaries.html
+*/
