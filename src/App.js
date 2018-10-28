@@ -100,4 +100,5 @@ Udacity lessons and for more help:
 * Project Walkthrough https://www.youtube.com/playlist?list=PL4rQq4MQP1crXuPtruu_eijgOUUXhcUCP
 * animation https://developers.google.com/maps/documentation/javascript/examples/marker-animations
 * Error Boundary https://reactjs.org/docs/error-boundaries.html
+* lat and lng error fix https://github.com/react-community/react-native-maps/issues/505
 */
