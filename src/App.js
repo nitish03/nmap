@@ -41,10 +41,10 @@ class App extends Component {
         };
       });
       this.setState({venues, markers, center});
-      console.log(results)
+      // console.log(results)
     }).catch(error => {
       alert('Something went wrong or API failed. Please try again') /*fetch ErrorBoundary if object of the request failed*/
-      console.log(error);
+      // console.log(error);
     })
   }
 
