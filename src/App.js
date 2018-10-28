@@ -27,7 +27,7 @@ class App extends Component {
     SquareAPI.search({
       near: "Jacksonville,FL",
       query: "Restaurant",
-      limit: 20
+      limit: 15
     }).then(results => {
       const { venues } = results.response;
       const { center } = results.response.geocode.feature.geometry;
