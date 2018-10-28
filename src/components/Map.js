@@ -2,6 +2,7 @@
 import React, { Component } from 'react';
 import { withScriptjs, withGoogleMap, GoogleMap, Marker, InfoWindow } from "react-google-maps";
 
+/*set the map, markers and info windows and also add parseFloat to fix location error*/
 const MyMap = withScriptjs(withGoogleMap((props) =>
 	<GoogleMap
 		defaultZoom={8} zoom = {props.zoom}
@@ -15,8 +16,11 @@ const MyMap = withScriptjs(withGoogleMap((props) =>
 		 return (
 			 <Marker key={id}
 			 position={{ lat: parseFloat(marker.lat), lng: parseFloat(marker.lng)}}
+			 /*show info on click of the marker*/
 			 onClick ={() => props.markedInfoWindow(marker)}
+			 /*set animation of markers*/
 			 animation= {arr.length === 1 ? google.maps.Animation.BOUNCE : google.maps.Animation.DROP}>
+			 {/*fetch FourSquare API and get the photos of places, name and their locaton information*/}
 		 {marker.isOpen && placeInfo.bestPhoto &&(
 			 <InfoWindow>
 			 <React.Fragment>
