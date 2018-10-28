@@ -4,13 +4,18 @@ import Listcontainer from './Listcontainer';
 class Placelist extends Component {
 	render() {
 		return (
-			<ol className="placelist">
+			<div id="placelist">
+			<ul aria-labelledby="placelist">
 			{this.props.venues && this.props.venues.map((place, id) => (
 				<Listcontainer {...place} key={id} handlePlaceList= {this.props.handlePlaceList}/>
 			))}
-			</ol>
+			</ul>
+			</div>
 		);
 	}
 }
 
 export default Placelist;
+
+/*aria-labelledby resources
+https://developer.mozilla.org/en-US/docs/Web/Accessibility/ARIA/ARIA_Techniques/Using_the_aria-labelledby_attribute*/
