@@ -5,11 +5,13 @@ class Sidebar extends Component {
 
 	constructor(props) {
 		super(props);
+		/*set state for query*/
 		this.state = {
 			query: '',
 		}
 	}
 
+/*Filter places list on user input*/
 	handleFilterPlaces = () => {
 			if(this.state.query.trim() !== "") {
 				const venues = this.props.venues.filter(venue =>
@@ -22,6 +24,7 @@ class Sidebar extends Component {
 			return this.props.venues;
 	}
 
+/*get filtered info windows on user input*/
 	handleSearchBar = event => {
  		this.setState({query: event.target.value});
  		const info = this.props.venues.map(venue => {
