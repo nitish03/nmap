@@ -21,6 +21,9 @@ This project is a one-page application using React. The app will show the google
 3. Run npm install
 4. Run npm start
 5. App will open automatically at http://localhost:3000/
+6. Run npm run build
+7. Run serve -s build
+8. then visit for offline use  http://localhost:5000/
 
 ### Dependancies
 1. GoogleMaps API
