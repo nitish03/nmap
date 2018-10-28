@@ -8,6 +8,10 @@
   width: 20%;
 }
 
+.sidebar h1 {
+  color: #fff;
+}
+
  #find {
   text-align: center;
   font-size: 25px;
@@ -24,7 +28,7 @@
   cursor: pointer;
   text-align: left;
   box-shadow: 0.5px 0.5px 0.5px 0.5px rgba(0, 0, 0, 0.7);
-  color: #FFF;
+  color: #fff;
 }
 
 .App-logo {

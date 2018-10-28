@@ -43,6 +43,7 @@ class Sidebar extends Component {
 	render() {
 		return (
 			<div className="sidebar">
+			<h1>Search Restaurants</h1>
 			<input type={"search"} id={"find"}
 			placeholder={"Find Your Place"}
 			onChange={this.handleSearchBar} aria-label={"Search Places"}/>
