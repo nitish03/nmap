@@ -2,6 +2,7 @@
 import React, { Component } from 'react';
 import { withScriptjs, withGoogleMap, GoogleMap, Marker, InfoWindow } from "react-google-maps";
 
+/*show alert if users Google API failed*/
 window.gm_authFailure = () => {
 	alert("Something went wrong. Please check your Google API key and try again.")
 }
@@ -26,7 +27,7 @@ const MyMap = withScriptjs(withGoogleMap((props) =>
 			 animation= {arr.length === 1 ? google.maps.Animation.BOUNCE : google.maps.Animation.DROP}>
 			 {/*fetch FourSquare API and get the photos of places, name and their locaton information*/}
 		 {marker.isOpen && placeInfo.bestPhoto &&(
-			 <InfoWindow>
+			 <InfoWindow onCloseClick ={() => props.cancelInfo()}>
 			 <React.Fragment>
 			 <img src= {`${placeInfo.bestPhoto.prefix}200x200${placeInfo.bestPhoto.suffix}`} alt={`Place: ${placeInfo.name}`}/>
 		    <h3>{placeInfo.name}</h3>

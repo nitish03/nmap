@@ -43,7 +43,7 @@ class App extends Component {
       this.setState({venues, markers, center});
       // console.log(results)
     }).catch(error => {
-      alert('Something went wrong. Please check your FourSquare API that failed, Please try again.') /*fetch ErrorBoundary if object of the request failed*/
+      alert('Something went wrong. Please check your FourSquare API that failed, Please try again.') /*show alert if users API failed*/
       // console.log(error);
     })
   }
@@ -58,7 +58,8 @@ class App extends Component {
     .then(res => {
       const newPlace = Object.assign(place, res.response.venue)
       this.setState({venues: Object.assign(this.state.venues, newPlace)})
-     console.log(newPlace)})
+     // console.log(newPlace)
+   })
   }
 
 /*return infow windows in default state*/
@@ -82,7 +83,8 @@ class App extends Component {
       <div className="App">
         <ErrorBoundary>
           <Sidebar {...this.state} handlePlaceList ={this.handlePlaceList}/>
-          <Map {...this.state} markedInfoWindow = {this.markedInfoWindow}/>
+          <Map {...this.state} markedInfoWindow = {this.markedInfoWindow}
+          cancelInfo = {this.cancelInfo} onCloseClick= {this.cancelInfo}/>
         </ErrorBoundary>
       </div>
     );
