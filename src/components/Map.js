@@ -2,6 +2,10 @@
 import React, { Component } from 'react';
 import { withScriptjs, withGoogleMap, GoogleMap, Marker, InfoWindow } from "react-google-maps";
 
+window.gm_authFailure = () => {
+	alert("Something went wrong. Please check your Google API key and try again.")
+}
+
 /*set the map, markers and info windows and also add parseFloat to fix location error*/
 const MyMap = withScriptjs(withGoogleMap((props) =>
 	<GoogleMap

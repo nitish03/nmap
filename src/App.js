@@ -43,7 +43,7 @@ class App extends Component {
       this.setState({venues, markers, center});
       // console.log(results)
     }).catch(error => {
-      alert('Something went wrong or API failed. Please try again') /*fetch ErrorBoundary if object of the request failed*/
+      alert('Something went wrong. Please check your FourSquare API that failed, Please try again.') /*fetch ErrorBoundary if object of the request failed*/
       // console.log(error);
     })
   }
