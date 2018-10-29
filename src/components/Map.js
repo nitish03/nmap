@@ -24,7 +24,8 @@ const MyMap = withScriptjs(withGoogleMap((props) =>
 			 /*show info on click of the marker*/
 			 onClick ={() => props.markedInfoWindow(marker)}
 			 /*set animation of markers*/
-			 animation= {arr.length === 1 ? google.maps.Animation.BOUNCE : google.maps.Animation.DROP}>
+			 animation= {arr.length === 1 ? google.maps.Animation.BOUNCE : google.maps.Animation.DROP}
+			 icon = {marker.icon}>
 			 {/*fetch FourSquare API and get the photos of places, name and their locaton information*/}
 		 {marker.isOpen && placeInfo.bestPhoto &&(
 			 <InfoWindow onCloseClick ={() => props.cancelInfo()}>

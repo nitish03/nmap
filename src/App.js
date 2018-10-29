@@ -4,7 +4,7 @@ import Map from './components/Map';
 import SquareAPI from './API/Api';
 import Sidebar from './components/Sidebar';
 import ErrorBoundary from './components/ErrorBoundary';
-
+import restaurant from './components/images/restaurant.png'; /*icon made by https://www.flaticon.com/free-icons/restaurant*/
 class App extends Component {
 
   constructor(props) {
@@ -37,7 +37,8 @@ class App extends Component {
           lng: venue.location.lng,
           id: venue.id,
           isOpen: false,
-          isVisible: true
+          isVisible: true,
+          icon: `http://maps.google.com/mapfiles/ms/icons/green-dot.png`
         };
       });
       this.setState({venues, markers, center});
@@ -52,6 +53,7 @@ class App extends Component {
   markedInfoWindow = (info) => {
     this.cancelInfo();
     info.isOpen = true;
+    info.icon = restaurant
     this.setState({markers: Object.assign(this.state.markers, info)})
     const place = this.state.venues.find(place => place.id === info.id);
     SquareAPI.venueDetails(info.id)
@@ -66,6 +68,7 @@ class App extends Component {
   cancelInfo = () => {
     const markers = this.state.markers.map(marker => {
       marker.isOpen = false;
+      marker.icon = `http://maps.google.com/mapfiles/ms/icons/green-dot.png`
       return marker;
     });
     this.setState({markers: Object.assign(this.state.markers, markers)})
@@ -75,7 +78,7 @@ class App extends Component {
   handlePlaceList = (place) => {
     const info = this.state.markers.find(info => info.id === place.id)
     this.markedInfoWindow(info)
-    console.log(place);
+    // console.log(place);
   }
 
   render() {
