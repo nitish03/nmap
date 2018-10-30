@@ -4,8 +4,8 @@ class Square  {
 	}
 	static auth() {
 		const keys = {
-			client_id: "1MOFPSZVAUKPPKPUEQUNZJVBZRVKY4DO020P0LRVO2PBRVQ3",
-			client_secret: "VQVZJ1JXPSAUUDKPBVDCZ2JYPRMNHWX2GFADXTZGIMDXRCE1",
+			client_id: "Your-FourSquare-Client-Id-Here",
+			client_secret: "Your-FourSquare-Client-Secret-Here",
 			v: "20181024"
 		}
 		return Object.keys(keys).map(key => `${key}=${keys[key]}`).join("&");
