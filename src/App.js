@@ -4,7 +4,8 @@ import Map from './components/Map';
 import SquareAPI from './API/Api';
 import Sidebar from './components/Sidebar';
 import ErrorBoundary from './components/ErrorBoundary';
-import restaurant from './components/images/restaurant.png'; /*icon made by https://www.flaticon.com/free-icons/restaurant*/
+import restaurant from './components/images/restaurant.png';
+
 class App extends Component {
 
   constructor(props) {
@@ -42,7 +43,7 @@ class App extends Component {
         };
       });
       this.setState({venues, markers, center});
-      // console.log(results)
+       console.log(results)
     }).catch(error => {
       alert('Something went wrong. Please check your FourSquare API that failed, Please try again.') /*show alert if users API failed*/
       // console.log(error);

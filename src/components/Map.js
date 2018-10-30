@@ -7,12 +7,96 @@ window.gm_authFailure = () => {
 	alert("Something went wrong. Please check your Google API key and try again.")
 }
 
+const style = [
+    {
+        "featureType": "administrative",
+        "elementType": "labels.text.fill",
+        "stylers": [
+            {
+                "color": "#444444"
+            }
+        ]
+    },
+    {
+        "featureType": "landscape",
+        "elementType": "all",
+        "stylers": [
+            {
+                "color": "#f2f2f2"
+            }
+        ]
+    },
+    {
+        "featureType": "poi",
+        "elementType": "all",
+        "stylers": [
+            {
+                "visibility": "off"
+            }
+        ]
+    },
+    {
+        "featureType": "road",
+        "elementType": "all",
+        "stylers": [
+            {
+                "saturation": -100
+            },
+            {
+                "lightness": 45
+            }
+        ]
+    },
+    {
+        "featureType": "road.highway",
+        "elementType": "all",
+        "stylers": [
+            {
+                "visibility": "simplified"
+            }
+        ]
+    },
+    {
+        "featureType": "road.arterial",
+        "elementType": "labels.icon",
+        "stylers": [
+            {
+                "visibility": "off"
+            }
+        ]
+    },
+    {
+        "featureType": "transit",
+        "elementType": "all",
+        "stylers": [
+            {
+                "visibility": "off"
+            }
+        ]
+    },
+    {
+        "featureType": "water",
+        "elementType": "all",
+        "stylers": [
+            {
+                "color": "#0e3545"
+            },
+            {
+                "visibility": "on"
+            }
+        ]
+    }
+]
+
 /*set the map, markers and info windows and also add parseFloat to fix location error*/
 const MyMap = withScriptjs(withGoogleMap((props) =>
 	<GoogleMap
 		defaultZoom={8} zoom = {props.zoom}
 		defaultCenter={{ lat: 30.66775, lng: -81.461511 }}
 		center = {{lat: parseFloat(props.center.lat), lng: parseFloat(props.center.lng)}}
+		defaultOptions = {{
+			styles: style
+		}}
 	>
 		{props.markers &&
 			props.markers.filter(marker => marker.isVisible)
@@ -30,7 +114,7 @@ const MyMap = withScriptjs(withGoogleMap((props) =>
 		 {marker.isOpen && placeInfo.bestPhoto &&(
 			 <InfoWindow onCloseClick ={() => props.cancelInfo()}>
 			 <React.Fragment>
-			 <img src= {`${placeInfo.bestPhoto.prefix}100x100${placeInfo.bestPhoto.suffix}`} alt={`Place: ${placeInfo.name}`}/>
+			 <img src= {`${placeInfo.bestPhoto.prefix}120x150${placeInfo.bestPhoto.suffix}`} alt={`Place: ${placeInfo.name}`}/>
 		    <h3>{placeInfo.name}</h3>
 				<p>{placeInfo.location['address']}</p>
 				</React.Fragment>

@@ -16,6 +16,3 @@ class Placelist extends Component {
 }
 
 export default Placelist;
-
-/*aria-labelledby resources
-https://developer.mozilla.org/en-US/docs/Web/Accessibility/ARIA/ARIA_Techniques/Using_the_aria-labelledby_attribute*/
