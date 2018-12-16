@@ -2,7 +2,9 @@
   "name": "nmap",
   "version": "0.1.0",
   "private": true,
+  "homepage": "https://nitish03.github.io/nmap/",
   "dependencies": {
+    "gh-pages": "^2.0.1",
     "react": "^16.5.2",
     "react-dom": "^16.5.2",
     "react-google-maps": "^9.4.5",
@@ -10,6 +12,8 @@
   },
   "scripts": {
     "start": "react-scripts start",
+    "predeploy": "npm run build",
+    "deploy": "gh-pages -d build",
     "build": "react-scripts build",
     "test": "react-scripts test",
     "eject": "react-scripts eject"

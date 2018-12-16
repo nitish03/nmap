@@ -1,4 +1,3 @@
-/*global google*/
 import React, { Component } from 'react';
 import { withScriptjs, withGoogleMap, GoogleMap, Marker, InfoWindow } from "react-google-maps";
 
@@ -108,7 +107,7 @@ const MyMap = withScriptjs(withGoogleMap((props) =>
 			 /*show info on click of the marker*/
 			 onClick ={() => props.markedInfoWindow(marker)}
 			 /*set animation of markers*/
-			 animation= {arr.length === 1 ? google.maps.Animation.BOUNCE : google.maps.Animation.DROP}
+			 animation= {arr.length === 1 ? window.google.maps.Animation.BOUNCE : window.google.maps.Animation.DROP}
 			 icon = {marker.icon}>
 			 {/*fetch FourSquare API and get the photos of places, name and their locaton information*/}
 		 {marker.isOpen && placeInfo.bestPhoto &&(
@@ -131,7 +130,7 @@ class Map extends Component {
 		return(
 			<MyMap
 			 {...this.props}
-			  googleMapURL="https://maps.googleapis.com/maps/api/js?v=3.exp&key=Your-Google-API-Key-Here"
+			  googleMapURL="https://maps.googleapis.com/maps/api/js?v=3.exp&key=AIzaSyBB8RTKIWJ9hnl7f0bpQmY7ZCRRRSgx8nA"
 			  loadingElement={<div style={{ height: `100%` }} />}
 			  containerElement={<div style={{ width: `70vw`, height: `100vh` }} />}
 			  mapElement={<div style={{ height: `100%` }} />}
