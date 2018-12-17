@@ -4,6 +4,8 @@ Project 7 Udacity Frond-End Nanodegree.
 
 This project was bootstrapped with [Create React App](https://github.com/facebook/create-react-app).
 
+See the live project here https://nitish03.github.io/nmap/
+
 ## Project Overview
 This project is a one-page application using React. The app will show the google map with markers and info window. It also has a sidebar with a search bar option where users put input to search restaurants. The user will be able to see location, address, image of the restaurant.
 
